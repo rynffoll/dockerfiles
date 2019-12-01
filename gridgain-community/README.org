@@ -1,0 +1,9 @@
+* GridGain Community Edition
+** Notes
+- Java 11
+ 
+** Build
+#+begin_src sh
+make VERSION=<gridgain-community.version>
+#+end_src
+

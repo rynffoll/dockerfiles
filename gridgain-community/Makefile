@@ -14,4 +14,4 @@ clean:
 	rm -r build/
 
 docker:
-	docker build -t gridgain-community:$(VERSION) --build-arg GG_VERSION=$(VERSION) .
+	docker build -t gridgain-community:$(VERSION) --build-arg VERSION=$(VERSION) .

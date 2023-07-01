@@ -4,6 +4,6 @@
  
 ** Build
 #+begin_src sh
-make VERSION=<gridgain-community.version>
+docker build -t gridgain-community:<gridgain-community.version> --build-arg VERSION=<gridgain-community.version> .
 #+end_src
 

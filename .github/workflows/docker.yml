@@ -7,6 +7,11 @@ on:
 
 jobs:
   docker:
+    strategy:
+      matrix:
+        include:
+          - version: 8.8.20
+          - version: 8.8.31
     runs-on: ubuntu-latest
     steps:
       -
@@ -31,4 +36,6 @@ jobs:
           context: gridgain-community
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: rynffoll/gridgain-community:8.8.20
+          tags: rynffoll/gridgain-community:${{ matrix.version }}
+          build-args: |
+            VERSION=${{ matrix.version }}

@@ -10,8 +10,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - version: 8.8.20
-          - version: 8.8.31
+          - name: gridgain-community
+            version: 8.8.20
+            context: gridgain-community
+            file: Dockerfile
     runs-on: ubuntu-latest
     steps:
       -
@@ -33,9 +35,10 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: gridgain-community
+          context: ${{ matrix.context }}
+          file: ${{ matrix.context }}/${{ matrix.file }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: rynffoll/gridgain-community:${{ matrix.version }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ matrix.name }}:${{ matrix.version }}
           build-args: |
             VERSION=${{ matrix.version }}

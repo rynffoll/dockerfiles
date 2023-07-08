@@ -14,7 +14,7 @@ RUN unzip -q gridgain-community-$VERSION.zip \
     -x "gridgain-community-$VERSION/examples/*" \
     -x "gridgain-community-$VERSION/platforms/*"
 RUN mv gridgain-community-$VERSION gridgain-community
-RUN wget -P gridgain-community -c https://raw.githubusercontent.com/gridgain/gridgain/$VERSION/modules/kubernetes/config/run.sh && \
+RUN wget -q -P gridgain-community -c https://raw.githubusercontent.com/gridgain/gridgain/$VERSION/modules/kubernetes/config/run.sh && \
     chmod +x gridgain-community/run.sh
 
 # # cleanup

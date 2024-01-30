@@ -11,7 +11,6 @@ RUN unzip -q gridgain-community-$VERSION.zip \
     -x "gridgain-community-$VERSION/docs/*" \
     -x "gridgain-community-$VERSION/benchmarks/*" \
     -x "gridgain-community-$VERSION/examples/*" \
-    -x "gridgain-community-$VERSION/examples/*" \
     -x "gridgain-community-$VERSION/platforms/*"
 RUN mv gridgain-community-$VERSION gridgain-community
 RUN wget -q -P gridgain-community -c https://raw.githubusercontent.com/gridgain/gridgain/$VERSION/modules/kubernetes/config/run.sh && \
